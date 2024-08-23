@@ -1,0 +1,33 @@
+<%- include('common/header') %>
+
+    <div class="container text-center mt-4">
+        <div class="user my-3">
+            <i class="far fa-edit user-icon mt-2"></i>
+            <h4 class="login mt-2">Register</h4>
+        </div>
+        <div class="card p-5 w-50 m-auto">
+            <% if (error) { %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+                <% } %>
+                    <form method="POST" action="/handleRegister">
+                        <input class="form-control" type="text" name="name" placeholder="Enter your name">
+                        <input class="form-control my-2" type="email" name="email" placeholder="Enter your email">
+                        <div class="password-container">
+                            <input class="form-control" type="password" name="password"
+                                placeholder="Enter your password">
+                            <i class="fas fa-eye text-muted"></i>
+                        </div>
+                        <div class="confirm-container">
+                            <input class="form-control my-2" type="password" name="confirmPassword"
+                                placeholder="Confirm your password">
+                            <i class="fas fa-eye text-muted"></i>
+                        </div>
+                        <button class="btn btn-default-outline my-4 w-100 rounded">Register</button>
+                        <a class="btn btn-default-outline" href="/login">Login</a>
+                    </form>
+        </div>
+    </div>
+
+    <%- include('common/footer') %>

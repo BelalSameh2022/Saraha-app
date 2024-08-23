@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    background-color: #f5f8fa;
+    font-family: "Poppins", sans-serif;
+}
+
+.password-container,
+.confirm-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.password-container i,
+.confirm-container i {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+}
+
+.bg-custom {
+    background-color: #10bbb3 !important;
+}
+
+.nav-link {
+    color: #fff !important;
+    transition: all 0.25s ease;
+}
+
+.nav-link:hover {
+    color: #10BBB3 !important;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.btn-default-outline {
+    color: #0da39c !important;
+    background-color: transparent;
+    border-color: #10BBB3;
+    width: 200px;
+    border-radius: 50px;
+}
+
+.btn-default-outline:hover {
+    color: #fff !important;
+    background-color: #10BBB3;
+    box-shadow: none;
+}
+
+.forgetPassword {
+    color: #0da39c;
+}
+
+.forgetPassword:hover {
+    color: #10BBB3;
+}
+
+.login {
+    color: #0da39c;
+}
+
+.user-icon {
+    font-size: 60px;
+    color: #C0C0C0;
+}
+
+.avatar {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+}
+
+.share {
+    margin: 0px auto 10px auto;
+}

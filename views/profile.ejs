@@ -1,0 +1,99 @@
+<%- include('common/header') %>
+
+    <div class="container text-center py-5 mt-5 text-center">
+        <div class="card pt-5">
+            <a href="" data-toggle="modal" data-target="#profile">
+                <img src="/images/avatar.png" class="avatar " alt="">
+
+            </a>
+            <h3 class="py-2">
+                <%= session.user.name %>
+            </h3>
+            <button data-toggle="modal" data-target="#share" class="btn btn-default-outline share">
+                <i class="fas fa-share-alt mr-2"></i>
+                Share Profile
+            </button>
+        </div>
+    </div>
+
+    <!-- Start profile photo modal -->
+    <div class="modal fade" id="profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Change photo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="container">
+                        <form action="" method="post">
+                            <label for="" class="text-muted">The file size of the photo should not exceed 7 MB</label>
+                            <input class="form-control" type="file" name="photo" id="">
+
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-info">Upload</button>
+                    <button type="button" class="btn btn-outline-danger">Remove Photo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Profile photo modal -->
+
+    <!-- Start share profile modal -->
+    <div class="modal fade" id="share" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Share Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><a href="<%= url %>" target="_blank">
+                            <%= url %>
+                        </a></p>
+                    <img src="<%= qrCode %>" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End share profile modal -->
+
+
+
+    <!-- =================  Messages  =================== -->
+    <div class="container text-center mb-5 text-center">
+        <div class="row">
+
+            <% if (!messages.length) { %>
+                <div class="col-md-12">
+                    <div class="card py-5">
+                        <p>You don't receive any messages yet...</p>
+                    </div>
+                </div>
+            <% } else { %>
+                    <% for( let i=0; i < messages.length; i++ ) { %>
+                        <div class="col-md-12 mb-2">
+                            <div class="card py-5">
+                                <p>
+                                    <%= messages[i].message %>
+                                </p>
+                            </div>
+                        </div>
+                    <% } %> 
+            <% } %>
+
+        </div>
+    </div>
+
+    <%- include('common/footer') %>
