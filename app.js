@@ -1,6 +1,7 @@
 import { config } from "dotenv";
 config();
 import express from "express";
+import path from "path";
 import cors from "cors";
 import session from "express-session";
 import MongoStore from "connect-mongo";
@@ -23,7 +24,7 @@ app.use(
   })
 );
 
-// app.set("views", "views");
+app.set("views", path.join(path.resolve(), "views"));
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
