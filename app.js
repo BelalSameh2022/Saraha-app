@@ -11,7 +11,10 @@ import * as routers from "./src/app.routes.js";
 const app = express();
 const port = process.env.PORT || 3001;
 
+// Set up CORS
 app.use(cors());
+
+// Set up session
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -24,10 +27,14 @@ app.use(
   })
 );
 
+// Set the view engine and the views directory
 app.set("views", path.join(path.resolve(), "views"));
 app.set("view engine", "ejs");
 
+// Serve static files from the 'public' directory
 app.use(express.static(path.join(path.resolve(), "public")));
+
+// Parse incoming requests with URL-encoded payloads
 app.use(express.urlencoded({ extended: true }));
 
 // Routes

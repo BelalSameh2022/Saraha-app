@@ -5,6 +5,10 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
+a {
+    overflow-wrap: break-word;
+}
+
 .password-container,
 .confirm-container {
     display: flex;

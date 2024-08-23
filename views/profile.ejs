@@ -32,7 +32,6 @@
                         <form action="" method="post">
                             <label for="" class="text-muted">The file size of the photo should not exceed 7 MB</label>
                             <input class="form-control" type="file" name="photo" id="">
-
                         </form>
                     </div>
                 </div>
@@ -59,7 +58,7 @@
                     <p><a href="<%= url %>" target="_blank">
                             <%= url %>
                         </a></p>
-                    <img src="<%= qrCode %>" alt="">
+                    <img src="<%= qrCode %>" title="<%= url %>" class="d-block m-auto w-50" alt="">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
